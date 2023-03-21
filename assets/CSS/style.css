@@ -4,17 +4,39 @@
   --bs-success: #016467;
 }
 
-main {
-  height: 100vh;
+header {
+  height: 100px;
 }
 
-.gp-container {
-  width: 90%;
-  max-width: 360px;
-  margin: 0 auto;
+main {
+  height: calc(100vh - 100px);
+}
+
+.logo {
+  width: 200px;
+}
+
+#prenota-biglietto {
+  width: 320px;
+}
+
+#biglietto {
+  position: absolute;
+  width: 360px;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.genera-biglietto {
+  margin-left: 800px;
+  opacity: 1 !important;
 }
 
 #nominativo {
+  text-transform: capitalize;
+}
+
+#tariffa {
   text-transform: uppercase;
 }
 

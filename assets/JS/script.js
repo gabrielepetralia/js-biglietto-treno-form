@@ -1,7 +1,5 @@
-const nome = prompt("Inserisci il tuo nome");
-const cognome = prompt("Inserisci il tuo cognome");
-const km = prompt("Inserisci il numero di km che vuoi percorrere");
-const age = prompt("Inserisci la tua età");
+const scontoMinorenni = 20;
+const scontoOver65 = 40;
 const prezzoAlKm = 0.21;
 const velTreno = 300;
 let ageCategory = "Adulto";
@@ -22,47 +20,48 @@ const data = `
   ${giorno}/${mese}/${anno}
 `;
 
-document.getElementById("dataBiglietto").innerHTML = data;
+document.getElementById("data-biglietto").innerHTML = data;
 
-let orarioP = `
+let orarioPartenza = `
   ${ora}:${minuti}
 `;
 
-document.getElementById("orarioPartenza").innerHTML = orarioP;
+document.getElementById("orario-partenza").innerHTML = orarioPartenza;
 
-let minutiViaggio = (km / velTreno) * 60;
+// Calcolo orario arrivo
+// let minutiViaggio = (km / velTreno) * 60;
 
-for(let i; i < minutiViaggio; i++) {
-  if (minuti < 60) {
-    minuti ++;
-    console.log(minuti);
-  } 
-  else 
-  {
-    ora ++;
-    minuti = 0;
-  }
-}
+// for(let i=0; i < minutiViaggio; i++) {
+//   if (minuti < 60) {
+//     minuti ++;
+//     console.log(minuti);
+//   } 
+//   else 
+//   {
+//     ora ++;
+//     minuti = 0;
+//   }
+// }
 
-let orarioA = `
+let orarioArrivo = `
   ${ora}:${minuti}
 `;
 
-document.getElementById("orarioArrivo").innerHTML = orarioA;
+document.getElementById("orario-arrivo").innerHTML = orarioArrivo;
 
 let prezzoTot = prezzoAlKm * km;
 
 if(age < 18) {
-  prezzoTot -= ((20/100)*prezzoTot);
+  prezzoTot -= ((scontoMinorenni/100)*prezzoTot);
   ageCategory = "Minorenne";
 }
 
 if(age > 65) {
-  prezzoTot = prezzoTot - ((40/100)*prezzoTot);
+  prezzoTot = prezzoTot - ((scontoOver65/100)*prezzoTot);
   ageCategory = "Over 65";
 }
 
-document.getElementById("prezzoBiglietto").innerHTML = `
+document.getElementById("prezzo-biglietto").innerHTML = `
   ${prezzoTot.toFixed(2)}&euro;
 `;
 
@@ -70,4 +69,4 @@ document.getElementById("nominativo").innerHTML = `
   ${nome} ${cognome}
 `;
 
-document.getElementById("categoriaEta").innerHTML = ageCategory;
+document.getElementById("age-category").innerHTML = ageCategory;

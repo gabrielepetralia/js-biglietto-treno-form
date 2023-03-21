@@ -8,39 +8,75 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
+  
   <!-- My CSS -->
   <link rel="stylesheet" href="assets/CSS/style.css">
 
   <title>Biglietto Treno Form</title>
 </head>
+
 <body>
   <main class="bg-danger">
     <div class="gp-container d-flex align-items-center justify-content-center flex-column h-100">
 
-      <div class="text-center text-white mb-3">
-        <h4 id="nominativo">?????</h4>
-        <span id="categoriaEta">???</span>
+      <!-- Prenota Biglietto -->
+      <div class="bg-white rounded shadow-lg w-100 pb-2 mb-2">
+      
+        <div class="text-center fw-bold bg-body-secondary rounded-top p-2">
+          <span class="fs-5 text-success">PRENOTA BIGLIETTO</span>
+        </div>
+
+        <div class="fw-bold px-3 pt-2">
+          <span>Nominativo</span>
+          <div class="border-bottom-dashed pt-1 pb-3">
+            <input type="text" id="genere" placeholder="Nome Cognome">
+          </div>
+        </div>
+
+        <div class="fw-bold px-3 pt-2">
+          <span>Km da percorrere</span>
+          <div class="pt-1 pb-3">
+            <input type="number" id="genere" placeholder="0">
+          </div>
+        </div>
+
+        <div class="fw-bold bg-body-secondary border-bottom px-3 pt-2">
+          <span class="text-danger">Fascia età</span>
+          <div class="pt-1 pb-3">
+            <select name="age-range" id="age-range">
+              <option value="adulto">Adulto</option>
+              <option value="minorenne">Minorenne</option>
+              <option value="over65">Over 65</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="d-flex justify-content-center px-3 pt-3 py-1">
+          <button class="bg-success text-white border-0 rounded me-2 py-2 px-3">Genera</button>
+          <button class="bg-danger text-white border-0 rounded ms-2 py-2 px-3">Annulla</button>
+        </div>
+      
       </div>
+      <!-- /Prenota Biglietto -->
 
       <!-- Biglietto -->
-      <div class="bg-white rounded w-100 py-2">
+      <div class="bg-white rounded shadow-lg w-100 py-2">
 
         <div class="d-flex align-items-center justify-content-between fw-bold px-3 py-2 border-bottom">
           <div>
             <img class="img-fluid logo-compagnia me-1" src="assets/img/frecciarossa.png" alt="frecciarossa">
             <span>9494</span>
           </div>
-          <span id="prezzoBiglietto" class="fs-4 text-danger">0.00€</span>
+          <span id="prezzo-biglietto" class="fs-4 text-danger">0.00€</span>
         </div>
 
-        <div class="fw-bold px-3 pt-2 pb-0">
+        <div class="fw-bold px-3 pt-2">
           <div class="d-flex justify-content-between align-items-center">
-            <span id="orarioPartenza" class="fs-5 text-success">--:--</span>
+            <span id="orario-partenza" class="fs-5 text-success">--:--</span>
             <div class="dash border-bottom-dashed"></div>
-            <span id="dataBiglietto" class="text-body-tertiary">--/--/----</span>
+            <span id="data-biglietto" class="text-body-tertiary">--/--/----</span>
             <div class="dash border-bottom-dashed"></div>
-            <span id="orarioArrivo" class="fs-5 text-success">--:--</span>
+            <span id="orario-arrivo" class="fs-5 text-success">--:--</span>
           </div>
           <div class="d-flex justify-content-between pb-2 border-bottom-dashed">
             <span>Roma</span>
@@ -61,13 +97,14 @@
             <h2 class="accordion-header" id="heading">
               <button class="gp-accordion-btn accordion-button collapsed bg-body-secondary rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse"
                 aria-expanded="false" aria-controls="collapseTwo">
-                <span class="fw-bold text-success">MAGGIORI DETTAGLI</span>
+                <span class="fw-bold text-success">DETTAGLI PASSEGGERO</span>
               </button>
             </h2>
             <div id="collapse" class="accordion-collapse collapse" aria-labelledby="heading"
               data-bs-parent="#accordionExample">
               <div class="accordion-body border-bottom">
-                Trovi maggiori dettagli sul tuo biglietto nell'<strong>email</strong> che ti abbiamo inviato.
+                <h4 id="nominativo">?????</h4>
+                <span id="age-category">???</span>
               </div>
             </div>
           </div>

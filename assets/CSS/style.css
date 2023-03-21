@@ -1,0 +1,77 @@
+:root {
+  --bs-danger-rgb: 183, 17, 57;
+  --bs-success-rgb: 1, 100, 103;
+  --bs-success: #016467;
+}
+
+main {
+  height: 100vh;
+}
+
+.gp-container {
+  width: 90%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+#nominativo {
+  text-transform: uppercase;
+}
+
+.logo-compagnia {
+  width: 120px;
+}
+
+.dash {
+  width: 15%;
+}
+
+.border-bottom-dashed {
+  border-bottom: 2px dashed var(--bs-border-color) !important;
+}
+
+.gp-badge {
+  font-size: 0.8rem;
+  color: var(--bs-tertiary-color);
+  border: 1px solid var(--bs-tertiary-color);
+  border-radius: 5px;
+  padding: 2px 10px;
+}
+
+.gp-badge.gp-badge-green {
+  background-color: var(--bs-success);
+  border: 0;
+  color: white;
+}
+
+.gp-accordion-btn:focus {
+  box-shadow: none;
+}
+
+.gp-accordion-btn:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-icon);
+}
+
+.gp-col {
+  width: calc(100% / 3);
+}
+
+.pnr {
+  width: 45%;
+  margin-right: 10px;
+}
+
+.apple-wallet-btn {
+  width: 55%;
+}
+
+.apple-wallet-btn:hover {
+  cursor: pointer;
+}
+
+.card.qr-code:hover {
+  transform: scale(2.5);
+  position: relative;
+  bottom: 100px;
+  z-index: 100;
+}
